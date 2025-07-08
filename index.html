@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Website</title>
+    <title>bread Shop - Toko Roti Terbaik</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <link rel="icon" type="image/png" href="image/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -15,6 +16,11 @@
         <nav>
             <div class="logo">
                 <img src="image/logo.png">
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Cari roti..." class="search-input">
+                <i class="fa-solid fa-magnifying-glass search-icon" id="search-btn"></i>
             </div>
 
             <ul>
@@ -27,9 +33,13 @@
             </ul>
 
             <div class="icon">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <i class="fa-solid fa-heart"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i class="fa-solid fa-magnifying-glass" id="search-toggle"></i>
+                <i class="fa-solid fa-heart" id="wishlist-icon">
+                    <span class="wishlist-badge" id="wishlist-badge">0</span>
+                </i>
+                <i class="fa-solid fa-cart-shopping" id="cart-icon">
+                    <span class="cart-badge" id="cart-badge">0</span>
+                </i>
             </div>
 
         </nav>
@@ -37,7 +47,7 @@
         <div class="main">
 
             <div class="men_text">
-                <h1>Don’t Be Bitter,<br>Be<span>Bread</span>-er</h1>
+                <h1>Don't Be Bitter,<br>Be<span>Bread</span>-er</h1>
             </div>
 
             <div class="main_image">
@@ -47,21 +57,19 @@
         </div>
 
         <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse reiciendis quaerat nobis 
-            deleniti amet non inventore. Reprehenderit recusandae voluptatibus minus tenetur itaque numquam 
-            cum quos dolorem maxime. Quas, quaerat nisi. Lorem ipsum dolor sit, amet consectetur adipisicing 
-            elit. Cumque facilis, quaerat cupiditate nulla quibusdam quo sunt esse tempore inventore vel 
-            voluptate, amet laudantium adipisci veniam nihil quam molestiae omnis mollitia.
+            Selamat datang di bread Shop, tempat di mana cita rasa autentik bertemu dengan kualitas terbaik. 
+            Kami menghadirkan berbagai pilihan roti dan kue yang dibuat dengan bahan-bahan segar dan 
+            berkualitas tinggi. Dari roti yang baru dipanggang hingga kue-kue lezat, setiap produk 
+            kami dibuat dengan penuh cinta dan perhatian untuk memberikan pengalaman kuliner yang tak terlupakan 
+            bagi Anda dan keluarga.
         </p>
 
         <div class="main_btn">
-            <a href="#">Order Now</a>
+            <a href="#Menu">Order Now</a>
             <i class="fa-solid fa-angle-right"></i>
         </div>
 
     </section>
-
-
 
     <!--About-->
 
@@ -76,22 +84,19 @@
                 <h1><span>About</span>Us</h1>
                 <h3>Why Choose us?</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, est. Doloremque 
-                    sapiente veritatis laboriosam corrupti optio et maxime. Ad, amet explicabo eaque labore 
-                    cupiditate quasi nostrum nemo recusandae id quibusdam? Lorem ipsum dolor sit amet 
-                    consectetur adipisicing elit. Doloremque ab, dolores pariatur cum exercitationem, illo nisi 
-                    veritatis vitae ea deleniti fugiat quisquam tempora, accusantium corrupti excepturi optio. 
-                    Inventore, cupiditate recusandae.
+                    bread Shop telah berdiri sejak tahun 2010 dengan komitmen untuk menyajikan roti dan kue berkualitas tinggi 
+                    dengan cita rasa yang autentik. Kami menggunakan resep tradisional yang telah diwariskan turun-temurun, 
+                    dikombinasikan dengan teknik modern untuk menghasilkan produk terbaik. Tim baker berpengalaman kami 
+                    memastikan setiap roti dan kue dibuat dengan standar kualitas tertinggi, menggunakan bahan-bahan segar 
+                    yang dipilih secara selektif dari supplier terpercaya.
                 </p>
             </div>
 
         </div>
 
-        <a href="#" class="about_btn">Order Now</a>
+        <a href="#Menu" class="about_btn">Order Now</a>
 
     </div>
-
-
 
     <!--Menu-->
 
@@ -99,7 +104,7 @@
         <h1>Our<span>Menu</span></h1>
 
         <div class="menu_box">
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Burger" data-price="15000" data-image="image/buger.jpg">
 
                 <div class="menu_image">
                     <img src="image/buger.jpg">
@@ -110,11 +115,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Burger</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti burger lembut dan empuk, sempurna untuk sandwich favorit Anda
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 15.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -122,12 +127,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
             
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Tawar" data-price="12000" data-image="image/pasta.jpg">
 
                 <div class="menu_image">
                     <img src="image/pasta.jpg">
@@ -138,11 +143,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Tawar</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti tawar putih klasik yang lembut, cocok untuk sarapan setiap hari
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 12.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -150,12 +155,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
 
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Gandum" data-price="18000" data-image="image/lasagna.webp">
 
                 <div class="menu_image">
                     <img src="image/lasagna.webp">
@@ -166,11 +171,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Gandum</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti gandum utuh yang sehat dan bergizi, kaya akan serat
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 18.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -178,12 +183,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
 
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Coklat" data-price="20000" data-image="image/chocolate_Drink.jpg">
 
                 <div class="menu_image">
                     <img src="image/chocolate_Drink.jpg">
@@ -194,11 +199,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Coklat</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti manis dengan isian coklat yang lezat dan menggugah selera
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 20.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -206,12 +211,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
 
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Pizza" data-price="25000" data-image="image/pizza.jpg">
 
                 <div class="menu_image">
                     <img src="image/pizza.jpg">
@@ -222,11 +227,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Pizza</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Base roti pizza yang crispy dan lembut, siap untuk topping favorit
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 25.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -234,12 +239,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
 
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Hot Dog" data-price="16000" data-image="image/Hot_dog.jpg">
 
                 <div class="menu_image">
                     <img src="image/Hot_dog.jpg">
@@ -250,11 +255,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Hot Dog</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti hot dog yang lembut dan panjang, cocok untuk sosis kesukaan
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 16.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -262,12 +267,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
 
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Manis" data-price="14000" data-image="image/juse.jpg">
 
                 <div class="menu_image">
                     <img src="image/juse.jpg">
@@ -278,11 +283,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Manis</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti manis dengan tekstur lembut dan rasa yang pas untuk cemilan
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 14.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -290,12 +295,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
 
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Bakar" data-price="22000" data-image="image/biryani.webp">
 
                 <div class="menu_image">
                     <img src="image/biryani.webp">
@@ -306,11 +311,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Bakar</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti bakar dengan berbagai pilihan topping dan selai favorit
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 22.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -318,12 +323,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
 
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Kue" data-price="28000" data-image="image/chocolate.jpg">
 
                 <div class="menu_image">
                     <img src="image/chocolate.jpg">
@@ -334,11 +339,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Kue</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti kue lembut dengan lapisan cream dan topping coklat premium
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 28.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -346,12 +351,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
 
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Es Krim" data-price="24000" data-image="image/ice_cream.jpg">
 
                 <div class="menu_image">
                     <img src="image/ice_cream.jpg">
@@ -362,11 +367,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Es Krim</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti manis yang disajikan dengan es krim vanilla dan topping
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 24.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -374,12 +379,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
 
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Spageti" data-price="26000" data-image="image/Spanchi.jpg">
 
                 <div class="menu_image">
                     <img src="image/Spanchi.jpg">
@@ -390,11 +395,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Spageti</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti unik dengan topping spageti dan saus bolognese yang lezat
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 26.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -402,12 +407,12 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
 
-            <div class="menu_card">
+            <div class="menu_card" data-name="Roti Sandwich" data-price="19000" data-image="image/sandwich.jpg">
 
                 <div class="menu_image">
                     <img src="image/sandwich.jpg">
@@ -418,11 +423,11 @@
                 </div>
 
                 <div class="menu_info">
-                    <h2>Bread</h2>
+                    <h2>Roti Sandwich</h2>
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum assumenda voluptates
+                        Roti sandwich segar dengan berbagai pilihan isian sehat dan lezat
                     </p>
-                    <h3>RP 49.000,00</h3>
+                    <h3>RP 19.000,00</h3>
                     <div class="menu_icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -430,7 +435,7 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star-half-stroke"></i>
                     </div>
-                    <a href="#" class="menu_btn">Order Now</a>
+                    <a href="#" class="menu_btn add-to-cart">Add to Cart</a>
                 </div>
 
             </div> 
@@ -438,9 +443,6 @@
         </div>
 
     </div>
-
-
-
 
     <!--Gallary-->
 
@@ -451,9 +453,9 @@
             <div class="gallary_image">
                 <img src="image/gallary_1.jpg">
 
-                <h3>Food</h3>
+                <h3>Bread</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+                    Nikmati koleksi foto roti-roti lezat kami yang dibuat dengan penuh perhatian dan cinta
                 </p>
                 <a href="#" class="gallary_btn">Order Now</a>
             </div>
@@ -461,9 +463,9 @@
             <div class="gallary_image">
                 <img src="image/gallary_2.jpg">
 
-                <h3>Food</h3>
+                <h3>Bread</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+                    Nikmati koleksi foto roti-roti lezat kami yang dibuat dengan penuh perhatian dan cinta
                 </p>
                 <a href="#" class="gallary_btn">Order Now</a>
             </div>
@@ -471,9 +473,9 @@
             <div class="gallary_image">
                 <img src="image/gallary_3.jpg">
 
-                <h3>Food</h3>
+                <h3>Bread</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+                    Nikmati koleksi foto roti-roti lezat kami yang dibuat dengan penuh perhatian dan cinta
                 </p>
                 <a href="#" class="gallary_btn">Order Now</a>
             </div>
@@ -481,9 +483,9 @@
             <div class="gallary_image">
                 <img src="image/gallary_4.jpg">
 
-                <h3>Food</h3>
+                <h3>Bread</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+                    Nikmati koleksi foto roti-roti lezat kami yang dibuat dengan penuh perhatian dan cinta
                 </p>
                 <a href="#" class="gallary_btn">Order Now</a>
             </div>
@@ -491,9 +493,9 @@
             <div class="gallary_image">
                 <img src="image/gallary_5.jpg">
 
-                <h3>Food</h3>
+                <h3>Bread</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+                    Nikmati koleksi foto roti-roti lezat kami yang dibuat dengan penuh perhatian dan cinta
                 </p>
                 <a href="#" class="gallary_btn">Order Now</a>
             </div>
@@ -501,9 +503,9 @@
             <div class="gallary_image">
                 <img src="image/gallary_6.jpg">
 
-                <h3>Food</h3>
+                <h3>Bread</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+                    Nikmati koleksi foto roti-roti lezat kami yang dibuat dengan penuh perhatian dan cinta
                 </p>
                 <a href="#" class="gallary_btn">Order Now</a>
             </div>
@@ -511,9 +513,6 @@
         </div>
 
     </div>
-
-
-
 
     <!--Review-->
 
@@ -546,10 +545,9 @@
                     </div>
 
                     <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quam facere 
-                        blanditiis in fugiat tempore necessitatibus aliquid. Id adipisci, rem corrupti 
-                        asperiores distinctio delectus quae quia tenetur totam laboriosam quam. Lorem ipsum, 
-                        dolor sit amet consectetur adipisicing elit!
+                        Roti di bread Shop benar-benar luar biasa! Roti burger mereka sangat lembut dan fresh, 
+                        roti tawar-nya juga berkualitas banget. Pelayanannya ramah dan tempatnya nyaman. 
+                        Pasti akan kembali lagi untuk mencoba roti lainnya. Highly recommended!
                     </p>
 
                 </div>
@@ -563,7 +561,7 @@
                 </div>
 
                 <div class="review_text">
-                    <h2 class="name">John Deo</h2>
+                    <h2 class="name">Sarah Lee</h2>
 
                     <div class="review_icon">
                         <i class="fa-solid fa-star"></i>
@@ -581,9 +579,9 @@
                     </div>
 
                     <p>
-                        Lorem ipsum dolor sit, Dolores soluta ullam ipsa voluptates 
-                        repudiandae dignissimos deleniti mollitia eum. Laudantium placeat velit nemo illo 
-                        pariatur. Fuga aperiam impedit illo atque repellendus!
+                        Sudah beberapa kali pesan di sini dan selalu puas dengan kualitasnya. 
+                        Roti coklat-nya the best, isian coklat-nya melted sempurna. 
+                        Delivery juga cepat dan roti masih hangat saat sampai.
                     </p>
 
                 </div>
@@ -597,7 +595,7 @@
                 </div>
 
                 <div class="review_text">
-                    <h2 class="name">John Deo</h2>
+                    <h2 class="name">Mike Johnson</h2>
 
                     <div class="review_icon">
                         <i class="fa-solid fa-star"></i>
@@ -615,9 +613,9 @@
                     </div>
 
                     <p>
-                        Lorem ipsum Dolores soluta ullam ipsa voluptates 
-                        repudiandae dignissimos deleniti mollitia eum. Laudantium placeat velit nemo illo 
-                        pariatur. Fuga aperiam impedit illo atque repellendus!
+                        Roti kue dan roti es krim di sini juara banget! Manis-nya pas, 
+                        tidak terlalu overwhelming. Cocok untuk dessert atau cemilan. 
+                        Harga juga reasonable untuk kualitas yang didapat.
                     </p>
 
                 </div>
@@ -631,7 +629,7 @@
                 </div>
 
                 <div class="review_text">
-                    <h2 class="name">John Deo</h2>
+                    <h2 class="name">Lisa Wong</h2>
 
                     <div class="review_icon">
                         <i class="fa-solid fa-star"></i>
@@ -649,8 +647,8 @@
                     </div>
 
                     <p>
-                        Lorem ipsum Laudantium placeat velit nemo illo 
-                        pariatur. Fuga aperiam impedit illo atque repellendus!
+                        Roti gandum-nya sehat banget, terasa buah aslinya. Roti sandwich-nya 
+                        juga enak, isian-nya generous dan roti-nya fresh. Perfect untuk sarapan!
                     </p>
 
                 </div>
@@ -660,8 +658,6 @@
         </div>
 
     </div>
-
-
 
     <!--Order-->
 
@@ -698,7 +694,7 @@
 
                 <div class="input">
                     <p>You Order</p>
-                    <input placeholder="food name">
+                    <input placeholder="bread name">
                 </div>
 
                 <div class="input">
@@ -713,6 +709,13 @@
         </div>
             
     </div>
+        <section class="location">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.86483656289303!2d107.17058588487389!3d-6.285095741377892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6984ca5fe9e99b%3A0xe2b18cb19084034f!2sFakultas%20Hukum!5e0!3m2!1sid!2sid!4v1751817077698!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </section>
+
+
     <!--Team-->
 
     <div class="team">
@@ -723,8 +726,8 @@
                 <img src="image/chef1.png">
 
                 <div class="info">
-                    <h2 class="name">Chef</h2>
-                    <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h2 class="name">Baker</h2>
+                    <p class="bio">Baker berpengalaman dengan keahlian membuat berbagai jenis roti dan kue</p>
 
                     <div class="team_icon">
                         <i class="fa-brands fa-facebook-f"></i>
@@ -740,8 +743,8 @@
                 <img src="image/chef2.png">
 
                 <div class="info">
-                    <h2 class="name">Chef</h2>
-                    <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h2 class="name">Baker</h2>
+                    <p class="bio">Baker berpengalaman dengan keahlian membuat berbagai jenis roti dan kue</p>
 
                     <div class="team_icon">
                         <i class="fa-brands fa-facebook-f"></i>
@@ -757,8 +760,8 @@
                 <img src="image/chef3.jpg">
 
                 <div class="info">
-                    <h2 class="name">Chef</h2>
-                    <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h2 class="name">Baker</h2>
+                    <p class="bio">Baker berpengalaman dengan keahlian membuat berbagai jenis roti dan kue</p>
 
                     <div class="team_icon">
                         <i class="fa-brands fa-facebook-f"></i>
@@ -774,8 +777,8 @@
                 <img src="image/chef4.jpg">
 
                 <div class="info">
-                    <h2 class="name">Chef</h2>
-                    <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <h2 class="name">Baker</h2>
+                    <p class="bio">Baker berpengalaman dengan keahlian membuat berbagai jenis roti dan kue</p>
 
                     <div class="team_icon">
                         <i class="fa-brands fa-facebook-f"></i>
@@ -799,17 +802,17 @@
 
             <div class="footer_tag">
                 <h2>Location</h2>
-                <p>USA</p>
-                <p>Japan</p>
-                <p>Italy</p>
+                <p>Jakarta</p>
+                <p>Bandung</p>
+                <p>Surabaya</p>
             </div>
 
             <div class="footer_tag">
                 <h2>Contact</h2>
-                <p>+94 37 1289 456 </p>
+                <p>+62 21 1289 456 </p>
                 <p>+62 12 3456 789</p>
-                <p>johndeo123@gmail.com</p>
-                <p>foodshop123@gmail.com</p>
+                <p>breadshop@gmail.com</p>
+                <p>info@breadshop.com</p>
             </div>
 
             <div class="footer_tag">
@@ -833,8 +836,109 @@
 
     </footer>
 
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Keranjang Belanja</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <div class="empty-cart">
+                <i class="fa-solid fa-cart-shopping" style="font-size: 50px; color: #ccc; margin-bottom: 20px;"></i>
+                <p>Keranjang belanja kosong</p>
+            </div>
+        </div>
+        <div class="cart-total" id="cart-total" style="display: none;">
+            <h3>Total: RP <span id="total-amount">0</span></h3>
+            <button class="checkout-btn" id="checkout-btn">Checkout</button>
+        </div>
+    </div>
 
+    <!-- Wishlist Sidebar -->
+    <div class="wishlist-sidebar" id="wishlist-sidebar">
+        <div class="wishlist-header">
+            <h2>Wishlist</h2>
+            <button class="close-wishlist" id="close-wishlist">&times;</button>
+        </div>
+        <div class="wishlist-items" id="wishlist-items">
+            <div class="empty-wishlist">
+                <i class="fa-solid fa-heart" style="font-size: 50px; color: #ccc; margin-bottom: 20px;"></i>
+                <p>Wishlist kosong</p>
+            </div>
+        </div>
+    </div>
 
-    
+    <!-- Search Results Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-content">
+            <div class="search-header">
+                <h2>Hasil Pencarian</h2>
+                <button class="close-search" id="close-search">&times;</button>
+            </div>
+            <div class="search-results" id="search-results">
+                <p>Masukkan kata kunci untuk mencari...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="checkout-content">
+            <h2>Checkout Pesanan</h2>
+            
+            <div class="order-summary" id="order-summary">
+                <h3>Ringkasan Pesanan</h3>
+                <div id="summary-items"></div>
+                <hr>
+                <div class="summary-item">
+                    <strong>Total: RP <span id="final-total">0</span></strong>
+                </div>
+            </div>
+
+            <div class="payment-methods">
+                <h3>Pilih Metode Pembayaran</h3>
+                
+                <div class="payment-option" data-method="qris">
+                    <input type="radio" name="payment" id="qris" value="qris">
+                    <label for="qris">
+                        <i class="fa-solid fa-qrcode"></i>
+                        QRIS
+                    </label>
+                </div>
+
+                <div class="payment-option" data-method="bank">
+                    <input type="radio" name="payment" id="bank" value="bank">
+                    <label for="bank">
+                        <i class="fa-solid fa-building-columns"></i>
+                        Transfer Bank
+                    </label>
+                </div>
+
+                <div class="payment-option" data-method="ewallet">
+                    <input type="radio" name="payment" id="ewallet" value="ewallet">
+                    <label for="ewallet">
+                        <i class="fa-solid fa-wallet"></i>
+                        E-Wallet (OVO, GoPay, DANA)
+                    </label>
+                </div>
+            </div>
+
+            <div class="checkout-actions">
+                <button class="btn btn-secondary" id="cancel-checkout">Batal</button>
+                <button class="btn btn-primary" id="confirm-payment">Bayar Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="success-modal">
+        <div class="success-content">
+            <i class="fa-solid fa-check-circle"></i>
+            <h2>Pesanan Berhasil!</h2>
+            <p>Terima kasih atas pesanan Anda. Pesanan akan segera diproses.</p>
+            <button class="btn btn-primary" id="close-success">OK</button>
+        </div>
+    </div>
+
 </body>
 </html>
