@@ -1,2 +1,3 @@
 # bread-order
-membuat web pesanan roti menggunakan html dan css
+membuat web pesanan roti menggunakan html, css, dan js
+
